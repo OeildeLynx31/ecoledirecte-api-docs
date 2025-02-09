@@ -60,7 +60,9 @@ Juste un rapide sommaire pour naviguer plus facilement dans la documentation.
 
 ## Format de la documentation
 
-La base de l'api élève est ``https://api.ecoledirecte.com/``. Toutes les URLs relatives sont relatives à cette base.
+La base de l'api élève est `https://api.ecoledirecte.com/`. Toutes les URLs relatives sont relatives à cette base.
+Il existe également une API clone qui, à notre connaîssance, n'a aucune différence avec la première. Il s'agit de 
+`https://apip.ecoledirecte.com`
 
 Les requêtes prennent généralement des paramètres soit en *query string* dans l'URL soit en JSON dans le corps de la requête. Ces paramètres sont encodés au format `application/x-www-form-urlencoded`, bien que cet encodage soit totalement optionnel pour le corps de la requête.
 
