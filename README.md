@@ -449,7 +449,7 @@ Voici la structure détaillée d'un utilisateur (et commentée) qui est contenu 
 
 ### Account modules
 
-Ces modules là sont ceux disponibles dans l'object account, ils ressemblent à ça :
+Ces modules-là sont ceux disponibles dans l'object `account`, ils ressemblent à ça :
 
 ```js
 {
@@ -461,7 +461,7 @@ Ces modules là sont ceux disponibles dans l'object account, ils ressemblent à 
 }
 ```
 
-Voici la liste des modules qui ont été documentés jusqu'a présent
+Voici la liste des modules qui ont été documentés jusqu'à présent :
 
 ```js
 {
@@ -725,12 +725,63 @@ Voici la liste des modules qui ont été documentés jusqu'a présent
 }
 ```
 
+Liste totale des modules existants et leur description :
+```js 
+{
+    VIE_SCOLAIRE: "Vie scolaire",
+    VIE_DE_LA_CLASSE: "Vie de la classe",
+    NOTES: "Notes",
+    CLOUDET: "Espaces de travail",
+    CLOUD: "Mon cloud",
+    MESSAGERIE: "Messagerie",
+    EDT: "Emploi du temps",
+    CAHIER_DE_TEXTES: "Cahier de textes",
+    RESERVATIONS: "Réservations",
+    REUNIONS_PP: "Réunion parents/professeurs",
+    RDVPP: "Rendez-vous",
+    COORDONNEES: "Vos informations",
+    SITUATION_FINANCIERE: "Situation financière",
+    PAIEMENT_EN_LIGNE: "Paiements en ligne",
+    DOCUMENTS: "Documents",
+    CONSULTATION_ETABLISSEMENT: "Consultation",
+    AFF_EL: "Coordonnées de la famille",
+    APPEL: "Feuille d'appel",
+    APPEL_PRIMAIRE: "Feuille d'appel pour le primaire",
+    APPEL_ETUDE: "Feuille d'appel pour l'étude",
+    DOCUMENTS_ELEVE: "Documents",
+    POSTIT: "Gestion des post-it",
+    AGENDA: "Agenda",
+    CARNET_NOTES: "Carnet de notes",
+    CATER: "Restauration scolaire",
+    SCOLACONCEPT: "ScolaWeb : Réservations, Crédits, Historiques ...",
+    SALLE_DES_PROFS: "Salle des profs",
+    CONSEIL_DE_CLASSE_NG: "Conseil de classe",
+    LSL: "LSL / Parcoursup",
+    CARNET_CORRESPONDANCE: "Carnet de correspondance",
+    GROUPE_FLEX: "Groupes flexibles",
+    CANTINE_BARCODE: "Badge cantine",
+    SUIVI_STAGE: "Suivi des stages",
+    AUTORISATIONS_SORTIE: "Autorisations de sortie",
+    QCM: "QCM",
+    DOSSIER_INSCRIPTION: "Dossier d'inscription",
+    VOLTAIRE: "Projet Voltaire",
+    COMP_NUM: "Compétences Numériques",
+    EDFORMS: "Formulaires et sondages",
+    MANUELS_SCOLAIRES: "Manuels & ressources",
+    PASSAGEWEB: "Passage Web",
+    JOURNAL_DE_CLASSE: "Journal de classe",
+    CAHIER_JOURNAL: "Cahier journal",
+    HUB: "Mes Applis",
+}
+
+```
+
 
 ## Élève
 
 ### Timeline
 
-Je sais pas qui aurait besoin de la timeline mais bon (:
+Je sais pas qui aurait besoin de la timeline mais bon :
 
 __GET__ `/v3/eleves/{id}/timeline.awp`
 
