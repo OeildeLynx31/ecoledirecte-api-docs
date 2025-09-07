@@ -44,6 +44,10 @@ Juste un rapide sommaire pour naviguer plus facilement dans la documentation.
   * [Carnet de correspondance](#carnet-de-correspondance)
   * [Documents administratifs](#documents-administratifs)
   * [Notes](#notes)
+  * [Messagerie](#messagerie)
+    * [Dossiers](#messagerie)
+    * [Contacts](#messagerie)
+    * [Envoyer un message](#messagerie)
   * [Espaces de travail](#espaces-de-travail)
   * [Manuels numériques](#manuels-numériques)
   * [QCMs](#qcms)
@@ -1392,6 +1396,99 @@ Data dans la réponse :
 
 > [!NOTE]
 > Il semble que certaine écoles aient les LSU mais pas d'autres 🤷‍♂️
+
+### Messagerie
+
+__get__ `https://api.ecoledirecte.com/v3/eleves/6964/messages.awp`
+
+Paramètres URL: 
+```
+force=false
+typeRecuperation= received | sent | draft | archived // dans la réponse, seulement l'élément spécifié et retourné, le reste sont des Array vides.
+idClasseur=0
+orderBy=date
+order=desc
+query=
+onlyRead=
+page=0
+itemsPerPage=number // défaut: 100
+getAll=0 // boolean ?
+```
+
+Data en réponse :
+
+```json
+{
+    "classeurs": Array<{
+        id: number,
+        name: string
+    }>,
+    "messages": {
+        "received": Array<{
+            "id": number, // id unique du message
+            "responseId": 0,
+            "forwardId": 0,
+            "mtype": "received",
+            "read": boolean,
+            "idDossier": number,
+            "idClasseur": number, // 0 si pas dans un classeur
+            "transferred": boolean,
+            "answered": boolean,
+            "to_cc_cci": "to",
+            "brouillon": boolean,
+            "canAnswer": boolean,
+            "subject": string,
+            "content": "", // toujours vide parait-il
+            "date":"AAAA-MM-JJ HH:MM:SS",,
+            "to": [],
+            "files": [],
+            "from": {
+            "nom": string,
+            "prenom": string,
+            "particule": "",
+            "civilite": "M." | "Mme",
+            "role": "P",
+            "listeRouge": false,
+            "id": number,
+            "read": boolean,
+            "fonctionPersonnel": ""
+        }>,
+        ],
+        "sent": Array<Message>, // rempli ou vide selon les paramètres URL de la requête
+        "draft": Array<Message>, // rempli ou vide selon les paramètres URL de la requête
+        "archived": Array<Message> // rempli ou vide selon les paramètres URL de la requête
+    },
+    "parametrage": {
+        "isActif": boolean,
+        "canParentsLireMessagesEnfants": boolean,
+        "destAdmin": boolean,
+        "destEleve": boolean,
+        "destFamille": boolean,
+        "destProf": boolean,
+        "destEspTravail": boolean,
+        "disabledNotification": boolean,
+        "notificationEmailEtablissement": boolean,
+        "choixMailNotification": number,
+        "autreMailNotification": string,
+        "mailPro": string,
+        "mailPerso": string,
+        "messagerieApiVersion": "v3",
+        "blackListProfActive": boolean,
+        "estEnBlackList": boolean,
+        "afficherToutesLesClasses": boolean
+    },
+    "pagination": {
+        "messagesRecusCount": number,
+        "messagesEnvoyesCount": number,
+        "messagesArchivesCount": number,
+        "messagesRecusNotReadCount": number,
+        "messagesDraftCount": number
+    }
+}
+
+```
+
+
 
 ### Espaces de travail
 
